@@ -8,9 +8,9 @@ jobs:
         with:
           repository: sgiammori/NootedGreen
       - name: Build NootedGreen
-        run: xcodebuild -project NootedGreen.xcodeproj -scheme NootedGreen -configuration Release -derivedDataPath build CODE_SIGNING_ALLOWED=NO
+        run: xcodebuild -project NootedGreen.xcodeproj -scheme NootedGreen -configuration Release -derivedDataPath build ARCHS=x86_64 ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO
       - name: Build HookCase
-        run: xcodebuild -project HookCase-master/HookCase.xcodeproj -scheme HookCase -configuration Release -derivedDataPath build-hc CODE_SIGNING_ALLOWED=NO
+        run: xcodebuild -project HookCase-master/HookCase.xcodeproj -scheme HookCase -configuration Release -derivedDataPath build-hc ARCHS=x86_64 ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO
       - uses: actions/upload-artifact@v4
         with:
           name: NootedGreen-build
